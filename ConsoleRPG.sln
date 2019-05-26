@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleRPG-Main", "ConsoleRPG-Main\ConsoleRPG-Main.vcxproj", "{5CD4CB71-C08C-4487-BF84-7971A186640E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleRPG-CharacterCreator", "ConsoleRPG-CharacterCreator\ConsoleRPG-CharacterCreator.vcxproj", "{774E568E-7559-401A-A917-46C95A088D67}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleRPG-SceneCreator", "ConsoleRPG-SceneCreator\ConsoleRPG-SceneCreator.vcxproj", "{1E2A7054-0E61-4883-BCAB-7AADCB2765EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CD4CB71-C08C-4487-BF84-7971A186640E}.Debug|x64.ActiveCfg = Debug|x64
+		{5CD4CB71-C08C-4487-BF84-7971A186640E}.Debug|x64.Build.0 = Debug|x64
+		{5CD4CB71-C08C-4487-BF84-7971A186640E}.Debug|x86.ActiveCfg = Debug|Win32
+		{5CD4CB71-C08C-4487-BF84-7971A186640E}.Debug|x86.Build.0 = Debug|Win32
+		{5CD4CB71-C08C-4487-BF84-7971A186640E}.Release|x64.ActiveCfg = Release|x64
+		{5CD4CB71-C08C-4487-BF84-7971A186640E}.Release|x64.Build.0 = Release|x64
+		{5CD4CB71-C08C-4487-BF84-7971A186640E}.Release|x86.ActiveCfg = Release|Win32
+		{5CD4CB71-C08C-4487-BF84-7971A186640E}.Release|x86.Build.0 = Release|Win32
+		{774E568E-7559-401A-A917-46C95A088D67}.Debug|x64.ActiveCfg = Debug|x64
+		{774E568E-7559-401A-A917-46C95A088D67}.Debug|x64.Build.0 = Debug|x64
+		{774E568E-7559-401A-A917-46C95A088D67}.Debug|x86.ActiveCfg = Debug|Win32
+		{774E568E-7559-401A-A917-46C95A088D67}.Debug|x86.Build.0 = Debug|Win32
+		{774E568E-7559-401A-A917-46C95A088D67}.Release|x64.ActiveCfg = Release|x64
+		{774E568E-7559-401A-A917-46C95A088D67}.Release|x64.Build.0 = Release|x64
+		{774E568E-7559-401A-A917-46C95A088D67}.Release|x86.ActiveCfg = Release|Win32
+		{774E568E-7559-401A-A917-46C95A088D67}.Release|x86.Build.0 = Release|Win32
+		{1E2A7054-0E61-4883-BCAB-7AADCB2765EC}.Debug|x64.ActiveCfg = Debug|x64
+		{1E2A7054-0E61-4883-BCAB-7AADCB2765EC}.Debug|x64.Build.0 = Debug|x64
+		{1E2A7054-0E61-4883-BCAB-7AADCB2765EC}.Debug|x86.ActiveCfg = Debug|Win32
+		{1E2A7054-0E61-4883-BCAB-7AADCB2765EC}.Debug|x86.Build.0 = Debug|Win32
+		{1E2A7054-0E61-4883-BCAB-7AADCB2765EC}.Release|x64.ActiveCfg = Release|x64
+		{1E2A7054-0E61-4883-BCAB-7AADCB2765EC}.Release|x64.Build.0 = Release|x64
+		{1E2A7054-0E61-4883-BCAB-7AADCB2765EC}.Release|x86.ActiveCfg = Release|Win32
+		{1E2A7054-0E61-4883-BCAB-7AADCB2765EC}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC2478A4-DEEC-495D-BD41-C61D9543A0DD}
+	EndGlobalSection
+EndGlobal
