@@ -127,3 +127,23 @@ void Character::viewStat()
 		<< "Strength: " << strength << "; Defense: " << totalDefnsePt << std::endl
 		<< "LF Weapon: " << leftHand.getName() << "; RH Weapon: " << rightHand.getName() << std::endl;
 }
+
+int Character::getHealth()
+{
+	return this->health;
+}
+
+int Character::getStrength()
+{
+	return this->strength;
+}
+
+int Character::getDefense()
+{
+	return this->defense;
+}
+
+std::string Character::getName()
+{
+	return this->name;
+}

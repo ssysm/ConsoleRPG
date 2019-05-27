@@ -341,3 +341,5 @@ healthchecksdb
 
 **/*.cfg
 **/*.wfg
+**/*.pfg
+**/*.sfg

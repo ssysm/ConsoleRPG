@@ -30,5 +30,10 @@ public:
 
 	/** Stat Tools*/
 	void viewStat();
+
+	int getHealth();
+	int getStrength();
+	int getDefense();
+	std::string getName();
 };
 

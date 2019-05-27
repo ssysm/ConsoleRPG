@@ -44,11 +44,12 @@ int Scene::giveDamage(int index)
 
 int Scene::giveDamage()
 {
-	int damageTotal;
+	int damageTotal = 0;
 	for (Character& c : this->enmies)
 	{
 		damageTotal += c.attack();
 	}
+	return damageTotal;
 }
 
 void Scene::viewAllStat()
