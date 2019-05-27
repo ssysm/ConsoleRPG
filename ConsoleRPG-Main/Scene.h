@@ -18,6 +18,10 @@ public:
 	void attackAllEnmies(int damage);
 	void attackOneEnmies(int index,int damage);
 
+	/** Enmies Control */
+	int giveDamage(int index);
+	int giveDamage();
+
 	/** Stat Control */
 	void viewAllStat();
 	void viewOneStat(int index);

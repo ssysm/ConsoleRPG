@@ -25,7 +25,7 @@ using namespace std;
 int main()
 {
 	srand(time(nullptr));
-	//::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
+	::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
 	
 	Character player("John", 200, 100, 15);
 	Scene playfield;

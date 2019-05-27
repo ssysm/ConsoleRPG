@@ -93,6 +93,8 @@ void newGame()
 	Character player;
 	Scene playground;
 	char gameChoice;
+	std::string filename;
+	std::vector<Weapon> temp;
 	player = initCharacter();
 	//Start Game
 
@@ -120,9 +122,21 @@ void newGame()
 				}
 			} while (enmiesIndex < 0 && enmiesIndex > playground.getEnmiesTotal());
 			playground.attackOneEnmies(enmiesIndex, player.attack());
+			player.takeDamage(playground.giveDamage(enmiesIndex));
 			break;
 		case 'S':
-			playground.attackAllEnmies(player.attack());
+			playground.attackAllEnmies(player.attack()/playground.getEnmiesTotal());
+			player.takeDamage(playground.giveDamage()/playground.getEnmiesTotal());
+			break;
+		case 'L':
+			std::cout << "What is your weapon file name? [*+*-W.wfg]: ";
+			std::cin >> filename;
+			temp = loadWeapon(filename);
+			player.addWeapon(temp.at(0), temp.at(1));
+			break;
+		case 'U':
+			player.unloadWeapon();
+			std::cout << "Unloaded weapon." << std::endl;
 			break;
 		default:
 			exit(-1);

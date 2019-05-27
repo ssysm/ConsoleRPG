@@ -37,6 +37,20 @@ void Scene::attackOneEnmies(int index, int damage)
 	this->enmies.at(index).takeDamage(damage);
 }
 
+int Scene::giveDamage(int index)
+{
+	return this->enmies.at(index).attack();
+}
+
+int Scene::giveDamage()
+{
+	int damageTotal;
+	for (Character& c : this->enmies)
+	{
+		damageTotal += c.attack();
+	}
+}
+
 void Scene::viewAllStat()
 {
 	for (Character &c : this->enmies) 
