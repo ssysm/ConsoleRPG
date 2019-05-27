@@ -2,12 +2,16 @@
 
 Weapon::Weapon()
 {
+	this->damage = 0;
+	this->name = "None";
+	this->defense = 0;
 }
 
-Weapon::Weapon(int damage, std::string name)
+Weapon::Weapon(std::string name,int damage, int defense)
 {
 	this->damage = damage;
 	this->name = name;
+	this->defense = defense;
 }
 
 std::string Weapon::getName()
@@ -18,4 +22,9 @@ std::string Weapon::getName()
 int Weapon::getDamage()
 {
 	return this->damage;
+}
+
+int Weapon::getDefense()
+{
+	return this->defense;
 }

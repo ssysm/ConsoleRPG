@@ -2,19 +2,106 @@
 //
 
 #include <iostream>
+#include <fstream>
+
+using namespace std;
+
+//Function Proto
+void CreateCharacter();
+void CreateWeapon();
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	char select;
+	do
+	{
+		cout << string(100, '\n');
+		cout << "Welcome to ConsoleRPG Character/Weapon Maker!" << endl;
+		cout << "Please Choose a Letter.: [W]eapon/[C]haracter/[Q]uit: ";
+		cin >> select;
+		if (select != 'W' && select != 'C' && select != 'Q') {
+			cout << "Please Try Again." << endl;
+		}
+	} while (select != 'W' && select != 'C' && select != 'Q');
+
+	switch (select)
+	{
+	case 'W':
+		CreateWeapon();
+		break;
+	case 'C':
+		CreateCharacter();
+		break;
+	case 'Q':
+		exit(0);
+	default:
+		break;
+	}
 }
 
-// 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
-// 调试程序: F5 或调试 >“开始调试”菜单
+void CreateCharacter()
+{
+	cout << string(100, '\n');
+	ofstream characterConfig;
+	int health, strength, defense;
+	string name;
 
-// 入门使用技巧: 
-//   1. 使用解决方案资源管理器窗口添加/管理文件
-//   2. 使用团队资源管理器窗口连接到源代码管理
-//   3. 使用输出窗口查看生成输出和其他消息
-//   4. 使用错误列表窗口查看错误
-//   5. 转到“项目”>“添加新项”以创建新的代码文件，或转到“项目”>“添加现有项”以将现有代码文件添加到项目
-//   6. 将来，若要再次打开此项目，请转到“文件”>“打开”>“项目”并选择 .sln 文件
+	cout << "Enter A Name: ";
+	cin >> name;
+	cout << "Enter Health Level: ";
+	cin >> health;
+	cout << "Enter Max Strength: ";
+	cin >> strength;
+	cout << "Enter Defense Point: ";
+	cin >> defense;
+
+	characterConfig.open(name + "-C.cfg");
+	characterConfig << name << ' '
+		<< health <<  ' '
+		<< strength << ' '
+		<< defense;
+	characterConfig.close();
+
+	cout << "Your Character File has been saved to " << name + "-C.cfg" << endl
+		<< "Press any key to go back to home screen..." << endl << endl;
+	getchar();
+	main();
+}
+
+void CreateWeapon() 
+{
+	cout << string(100, '\n');
+	ofstream weaponConfig;
+	int damageLF, defenseLF;
+	int damageRT, defenseRT;
+	string nameLF,nameRT;
+
+	cout << "Enter A Name for LF Hand: ";
+	cin >> nameLF;
+	cout << "Enter damage point LF Hand: ";
+	cin >> damageLF;
+	cout << "Enter defense point LF Hand: ";
+	cin >> defenseLF;
+
+	cout << endl;
+
+	cout << "Enter A Name for RT Hand: ";
+	cin >> nameRT;
+	cout << "Enter damage point RT Hand: ";
+	cin >> damageRT;
+	cout << "Enter defense point RT Hand: ";
+	cin >> defenseRT;
+
+	weaponConfig.open(nameLF  + '+' + nameRT + "-W.wfg");
+	weaponConfig << nameLF << ' '
+		<< damageLF << ' '
+		<< defenseLF << endl
+		<< nameRT << ' '
+		<< damageRT << ' '
+		<< defenseRT;
+	weaponConfig.close();
+	cout << "Your Weapon File has been saved to " << nameLF + '+' + nameRT + "-W.wfg" << endl
+		<< "Press any key to go back to home screen..." << endl << endl;
+	getchar();
+	main();
+}

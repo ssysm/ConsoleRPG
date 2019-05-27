@@ -3,13 +3,14 @@
 class Weapon
 {
 private:
-	int damage;
+	int damage, defense;
 	std::string name;
 public:
 	Weapon();
-	Weapon(int damage, std::string name);
+	Weapon(std::string name,int damage, int defense);
 
 	std::string getName();
 	int getDamage();
+	int getDefense();
 };
 
