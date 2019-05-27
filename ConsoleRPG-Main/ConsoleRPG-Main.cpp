@@ -1,5 +1,11 @@
-﻿// ConsoleRPG-Main.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
+﻿/**
+	Shengming Yuan Pd.10
+	This is a prototype of an RPG. You will fight a series of battles against opponents of your choice.
+
+	I have attempted the following features:
+	- Character/Weapon/Scene Create of your own choice.
+	- Load/Unload Weapon(Inventory) on the fly.
+*/
 
 #include <iostream>
 #include <cstdlib>
