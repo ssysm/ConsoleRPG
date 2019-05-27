@@ -121,7 +121,11 @@ void newGame()
 			} while (enmiesIndex < 0 && enmiesIndex > playground.getEnmiesTotal());
 			playground.attackOneEnmies(enmiesIndex, player.attack());
 			break;
+		case 'S':
+			playground.attackAllEnmies(player.attack());
+			break;
 		default:
+			exit(-1);
 			break;
 		}
 	} while (playground.isEnmiesAlive() && player.isCharacterAlive());
