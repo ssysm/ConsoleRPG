@@ -88,10 +88,13 @@ char getGameChoice() {
 	return gameChoice;
 }
 
-void newGame() 
+void newGame(bool loadSceneFile) 
 {
-	Character player;
 	Scene playground;
+	if (loadSceneFile) {
+		playground = loadScene();
+	}
+	Character player;
 	char gameChoice;
 	std::string filename;
 	std::vector<Weapon> temp;

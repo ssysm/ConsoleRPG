@@ -12,4 +12,4 @@ Character initCharacter();
 Character loadCharacter(std::string filename);
 
 char getGameChoice();
-void newGame();
+void newGame(bool loadScene);

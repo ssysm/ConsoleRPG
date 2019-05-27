@@ -26,10 +26,7 @@ int main()
 {
 	srand(time(nullptr));
 	::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
-	
-	Character player("John", 200, 100, 15);
-	Scene playfield;
-	
+
 	char gamemode;
 	do
 	{
@@ -51,7 +48,10 @@ int main()
 	switch (gamemode)
 	{
 	case 'N':
-		newGame();
+		newGame(false);
+		break;
+	case 'L':
+		newGame(true);
 		break;
 	default:
 		exit(0);
