@@ -1,5 +1,6 @@
 #include "MainActivity.h"
 
+//Load a Scene from a file and return scene
 Scene loadScene(std::string filename)
 {
 	std::vector<Character> enmies;
@@ -16,6 +17,7 @@ Scene loadScene(std::string filename)
 	return Scene(enmies);
 }
 
+//Load a Character from a file and return Character
 Character loadCharacter(std::string filename)
 {
 	Character savedChar;
@@ -30,6 +32,7 @@ Character loadCharacter(std::string filename)
 	return savedChar;
 }
 
+//Load a Weapon from a file and return Weapon vector
 std::vector<Weapon> loadWeapon(std::string filename) 
 {
 	std::vector<Weapon> weapons;
@@ -46,6 +49,7 @@ std::vector<Weapon> loadWeapon(std::string filename)
 	return weapons;
 }
 
+//Init Player Character
 Character initCharacter() {
 
 	Character player;
@@ -80,6 +84,7 @@ Character initCharacter() {
 	return player;
 }
 
+//Init Playground(Scene)
 Scene initScene()
 {
 	std::string filename;
@@ -88,6 +93,7 @@ Scene initScene()
 	return loadScene(filename);
 }
 
+//Get Game choice from player each round(helper)
 char getGameChoice() {
 	char gameChoice;
 	do
@@ -107,6 +113,7 @@ char getGameChoice() {
 	return gameChoice;
 }
 
+//Determine if is a new game or not
 void newGame(bool loadSceneFile) 
 {
 	Scene playground;
@@ -120,59 +127,7 @@ void newGame(bool loadSceneFile)
 	mainGame(playground, player);
 }
 
-void mainGame(Scene& playground, Character& player) 
-{
-	char gameChoice;
-	std::string filename;
-	std::vector<Weapon> temp;
-	do
-	{
-		std::cout << "Enmies:" << std::endl;
-		playground.viewAllStat();
-		std::cout << "You: " << std::endl;
-		player.viewStat();
-		std::cout << std::endl;
-		gameChoice = getGameChoice();
-		std::cout << std::string(100, '\n') << std::endl;
-		switch (gameChoice)
-		{
-		case 'A':
-			int enmiesIndex;
-			do
-			{
-				std::cout << "Please enter enimey No. [1-" << playground.getEnmiesTotal() << "]: ";
-				std::cin >> enmiesIndex;
-				enmiesIndex -= 1;
-				if (enmiesIndex < 1 && enmiesIndex > playground.getEnmiesTotal())
-				{
-					std::cout << "Please Try Again" << std::endl;
-				}
-			} while (enmiesIndex < 0 && enmiesIndex > playground.getEnmiesTotal());
-			playground.attackOneEnmies(enmiesIndex, player.attack());
-			player.takeDamage(playground.giveDamage(enmiesIndex));
-			break;
-		case 'S':
-			playground.attackAllEnmies(player.attack() / playground.getEnmiesTotal());
-			player.takeDamage(playground.giveDamage() / playground.getEnmiesTotal());
-			break;
-		case 'L':
-			std::cout << "What is your weapon file name? [*+*-W.wfg]: ";
-			std::cin >> filename;
-			temp = loadWeapon(filename);
-			player.addWeapon(temp.at(0), temp.at(1));
-			break;
-		case 'U':
-			player.unloadWeapon();
-			std::cout << "Unloaded weapon." << std::endl;
-			break;
-		default:
-			progressSaver(playground, player);
-			exit(0);
-			break;
-		}
-	} while (playground.isEnmiesAlive() && player.isCharacterAlive());
-}
-
+//Save Progesss as game goes
 void progressSaver(Scene playground, Character player)
 {
 	std::ofstream progressFile;
@@ -183,4 +138,9 @@ void progressSaver(Scene playground, Character player)
 		progressFile << c.getName() << ' ' << c.getHealth() << ' ' << c.getDefense() << ' ' << c.getStrength() << std::endl;
 	}
 	progressFile.close();
+}
+
+void continueGame()
+{
+
 }
